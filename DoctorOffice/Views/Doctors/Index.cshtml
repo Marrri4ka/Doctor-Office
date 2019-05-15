@@ -1,0 +1,37 @@
+<html>
+<head>
+
+</head>
+<body>
+<h1>Doctors</h1>
+
+@if (@Model.Count == 0)
+{
+<h3>No doctors in our clinic yet. </h3>
+}
+
+@foreach (var doctor in Model)
+{
+
+<h5>Doctor</h5>
+  <a href='/doctors/@doctor.GetId()'>@doctor.GetName()</a>
+
+
+        <form action="/doctors/@doctor.GetId()/delete" method="post">
+          <button class="btn btn-sm" type="submit" name="button">Clear</button>
+        </form>
+
+    <a href='/doctors/@doctor.GetId()/delete'>Delete</a>
+  <a href='/doctors/@doctor.GetId()/edit'>Edit</a>
+
+
+
+
+}
+<a class="card-link" href="/">Back home</a>
+
+
+
+</body>
+</center>
+</html>

@@ -1,0 +1,33 @@
+@using DoctorOffice.Models;
+
+<h1>Doctor Office</h1>
+<h2>Doctor: @Model["doctor"].GetName()</h2>
+<hr />
+
+@if (@Model["doctorPatients"].Count != 0)
+{
+<h4>Here are all doctor's patinets:</h4>
+<ul>
+  @foreach (var patient in @Model["doctorPatients"])
+  {
+  <li>@patient.GetName()</li>
+  }
+</ul>
+}
+
+<h4>Add a patient for this doctor:</h4>
+
+<form action='/doctors/@Model["doctor"].GetId()/patients/new' method='post'>
+  <label for='patientId'>Select a patient</label>
+  <select id='patientId' name='patientId' type='text'>
+
+    @foreach (var patient in @Model["allPatients"])
+    {
+    <option value='@patient.GetId()'>@patient.GetName()</option>
+    }
+
+  </select>
+  <button type='submit'>Add</button>
+</form>
+
+<p><a href="/">Return to Main Page</a></p>

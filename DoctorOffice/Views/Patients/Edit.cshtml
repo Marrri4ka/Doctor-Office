@@ -1,0 +1,11 @@
+<h2>Edit patient: @Model["patient"].GetName()</h2>
+
+<form action="/doctors/@Model["doctor"].GetId()/patients/@Model["patient"].GetId()/editpatient" method="post">
+  <label for="newName">Name:</label>
+  <input type="text" name="newName" value="@Model["patient"].GetName()"><br><br>
+  <label for="newBirthday">Due Date:</label>
+  <input type="date" name="newBirthday" value="@Model["patient"].GetBirthday()"><br><br>
+  <button type="submit">Edit</button>
+</form>
+
+<h4><a href="/doctors/@Model["doctor"].GetId()/patients/@Model["patient"].GetId()">Return to previous page</a></h4>

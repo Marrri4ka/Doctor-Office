@@ -1,0 +1,22 @@
+
+<html>
+
+<body>
+
+      <h1>Edit doctor</h1>
+
+
+
+      <form action="/doctors/@Model.GetId()/editedDoctor" method="post">
+        <label for="doctorName">Change name</label>
+        <input id="doctorName" name="doctorName" type="text" value ="@Model.GetName()"> <button id="button" type="submit">Update</button><br>
+
+
+      </form>
+
+      <a class="card-link" href="/">Back home</a>
+      <a class="card-link" href="/doctors">Back to categories</a>
+
+</body>
+
+</html>
